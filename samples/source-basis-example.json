@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "purpose": "Illustrative approved source basis for public evaluation only. Contains no customer or proprietary data.",
+  "sources": [
+    {
+      "source_id": "SRC-PRODUCT-BRIEF-001",
+      "title": "Feature Product Brief",
+      "owner": "Product",
+      "content_type": "product_brief",
+      "version": "1.0",
+      "status": "approved",
+      "classification": "public_evaluation",
+      "effective_date": "2026-06-01",
+      "review_due": "2026-09-01",
+      "allowed_use": ["product_marketing", "support_enablement"],
+      "provenance": "public evaluation sample",
+      "retrieval_notes": "Use only for illustrative feature and positioning context."
+    },
+    {
+      "source_id": "SRC-CLAIMS-REGISTER-001",
+      "title": "Approved Claims Register",
+      "owner": "Legal and Product Marketing",
+      "content_type": "claims_register",
+      "version": "2026.06",
+      "status": "approved",
+      "classification": "public_evaluation",
+      "effective_date": "2026-06-01",
+      "review_due": "2026-07-01",
+      "allowed_use": ["reviewed_marketing_copy", "reviewed_support_enablement"],
+      "provenance": "public evaluation sample",
+      "retrieval_notes": "A real workflow would require exact claim-to-source mapping and named review."
+    },
+    {
+      "source_id": "SRC-BRAND-VOICE-001",
+      "title": "Brand Voice Guide",
+      "owner": "Creative Operations",
+      "content_type": "brand_guidance",
+      "version": "1.4",
+      "status": "approved",
+      "classification": "public_evaluation",
+      "effective_date": "2026-05-15",
+      "review_due": "2026-11-15",
+      "allowed_use": ["creative_drafting", "support_response_drafting"],
+      "provenance": "public evaluation sample",
+      "retrieval_notes": "Use for tone and style; do not treat as factual product authority."
+    },
+    {
+      "source_id": "SRC-SUPPORT-FAQ-001",
+      "title": "Customer Support FAQ",
+      "owner": "Customer Support Operations",
+      "content_type": "faq",
+      "version": "1.0",
+      "status": "approved",
+      "classification": "public_evaluation",
+      "effective_date": "2026-06-01",
+      "review_due": "2026-08-01",
+      "allowed_use": ["support_response_drafting"],
+      "provenance": "public evaluation sample",
+      "retrieval_notes": "Escalate account-specific, privacy, legal, billing, or safety questions."
+    },
+    {
+      "source_id": "SRC-CAMPAIGN-CONSTRAINTS-001",
+      "title": "Campaign Constraints",
+      "owner": "Creative Operations",
+      "content_type": "operational_constraints",
+      "version": "1.0",
+      "status": "approved",
+      "classification": "public_evaluation",
+      "effective_date": "2026-06-01",
+      "review_due": "2026-08-01",
+      "allowed_use": ["campaign_workflow_planning"],
+      "provenance": "public evaluation sample",
+      "retrieval_notes": "Use to constrain channels, deliverables, timing, and review sequence."
+    }
+  ]
+}
