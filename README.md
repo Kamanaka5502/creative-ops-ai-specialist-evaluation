@@ -3,6 +3,10 @@
   <sub>AI Specialist Evaluation Build · Samantha Revita</sub>
 </p>
 
+<p align="center">
+  <img src="./assets/creative-ops-operational-intelligence-holographic.png" alt="Holographic Creative Ops Operational Intelligence consequence evaluation surface" width="100%" />
+</p>
+
 # Resolve what may become real.
 
 > **Generation is not operational standing.**
