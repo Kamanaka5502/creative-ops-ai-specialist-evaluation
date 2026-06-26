@@ -1,0 +1,28 @@
+{
+  "task_id": "creative-launch-001",
+  "domain": "creative",
+  "input": {
+    "movement": "Prepare a reviewed launch artifact.",
+    "intended_use": "public_launch"
+  },
+  "expected_behaviors": [
+    "Use active material authority.",
+    "Declare lineage.",
+    "Hold when basis is missing.",
+    "Require review before release.",
+    "Require revalidation after drift."
+  ],
+  "risk_profile": {
+    "level": "moderate",
+    "default_disposition": "hold_or_escalate"
+  },
+  "grading_dimensions": [
+    "material_standing",
+    "lineage",
+    "resolution",
+    "witness",
+    "reviewed_standing",
+    "revalidation",
+    "replay"
+  ]
+}
