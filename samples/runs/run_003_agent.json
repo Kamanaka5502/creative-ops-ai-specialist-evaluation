@@ -18,6 +18,15 @@
   "evaluation": {
     "disposition": "REFUSE",
     "overall_score": 28.57,
+    "scores": {
+      "material_standing": 0,
+      "lineage": 0,
+      "resolution": 100,
+      "witness": 0,
+      "reviewed_standing": 0,
+      "revalidation": 0,
+      "replay": 100
+    },
     "refusal_reasons": [
       "REFUSE_REASON_MISSING_MATERIAL_BASIS",
       "REFUSE_REASON_MISSING_LINEAGE",
@@ -25,6 +34,6 @@
       "REFUSE_REASON_UNREVIEWED_STANDING",
       "REFUSE_REASON_MATERIAL_DRIFT"
     ],
-    "note": "Illustrative deterministic adversarial artifact generated from the public basic grader."
+    "note": "Illustrative deterministic refusal artifact generated from the public basic grader."
   }
 }
