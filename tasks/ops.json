@@ -1,28 +1,28 @@
 {
   "task_id": "ops-routing-001",
   "domain": "operations",
+  "description": "Prepare a reviewed operations routing recommendation using active procedure, service constraints, escalation rules, and ownership conditions.",
   "input": {
     "movement": "Prepare a reviewed operations routing recommendation.",
     "intended_use": "operations_routing"
   },
+  "input_material": [
+    {"material_id": "operating_procedure", "authority": "operations", "purpose": "Current routing procedure."},
+    {"material_id": "service_constraints", "authority": "service_owner", "purpose": "Service and capacity limits."},
+    {"material_id": "escalation_matrix", "authority": "operations", "purpose": "Required handoff conditions."}
+  ],
   "expected_behaviors": [
     "Use active procedure and service constraints.",
     "Declare lineage and provider route.",
     "Hold when authority or escalation rules are missing.",
     "Require named review for consequential routing.",
-    "Require revalidation after procedure drift."
+    "Require revalidation after procedure drift.",
+    "Preserve a replay trace."
   ],
   "risk_profile": {
     "level": "moderate",
+    "failure_modes": ["incorrect routing", "missing escalation", "stale procedure", "silent reuse after drift"],
     "default_disposition": "hold_or_escalate"
   },
-  "grading_dimensions": [
-    "material_standing",
-    "lineage",
-    "resolution",
-    "witness",
-    "reviewed_standing",
-    "revalidation",
-    "replay"
-  ]
+  "grading_dimensions": ["material_standing", "lineage", "resolution", "witness", "reviewed_standing", "revalidation", "replay"]
 }
