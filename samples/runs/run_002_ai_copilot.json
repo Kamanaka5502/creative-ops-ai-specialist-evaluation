@@ -22,6 +22,15 @@
   "evaluation": {
     "disposition": "REVIEW",
     "overall_score": 100.0,
-    "note": "A complete evidence record can still remain NOT_BOUND. The score reflects protocol completeness, not permission to release."
+    "scores": {
+      "material_standing": 100,
+      "lineage": 100,
+      "resolution": 100,
+      "witness": 100,
+      "reviewed_standing": 100,
+      "revalidation": 100,
+      "replay": 100
+    },
+    "note": "A complete evidence record can remain NOT_BOUND. The score reflects protocol completeness, not permission to release."
   }
 }
