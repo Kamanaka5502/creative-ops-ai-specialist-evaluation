@@ -48,6 +48,7 @@ It is a public evaluation build for an **operational intelligence architecture**
 | [`index.html`](./index.html) | Public entry point |
 | [`operational-surface.html`](./operational-surface.html) | Interactive consequence lifecycle: stage → resolve → witness → bind → drift → revalidate |
 | [`OPERATIONAL_INTELLIGENCE.md`](./OPERATIONAL_INTELLIGENCE.md) | Core architectural position |
+| [`EVALUATION_SYSTEM.md`](./EVALUATION_SYSTEM.md) | Task catalog, grader, evaluation records, sample runs, runner, and tests |
 | [`CASEBOOK.md`](./CASEBOOK.md) | Cross-domain applications: creative, support, technical change, model adaptation, adoption |
 | [`EVIDENCE_MAP.md`](./EVIDENCE_MAP.md) | Capability-to-artifact map for technical reviewers |
 
@@ -75,6 +76,8 @@ The public examples run with the Python standard library only.
 python3 examples/negative_cases.py
 python3 examples/operational_lifecycle.py
 python3 examples/provider_route_adapter.py
+python3 evaluate.py --task tasks/creative.json --record samples/runs/run_001_human.json
+python3 -m unittest tests/test_basic_grader.py
 ```
 
 | Example | Demonstrates |
@@ -82,6 +85,7 @@ python3 examples/provider_route_adapter.py
 | [`examples/negative_cases.py`](./examples/negative_cases.py) | Failure-closed behavior: missing basis, inactive material, unauthorized use → `HELD` |
 | [`examples/operational_lifecycle.py`](./examples/operational_lifecycle.py) | Active field → `MAY_BIND` → reviewed standing → material drift → `REVALIDATION_REQUIRED` |
 | [`examples/provider_route_adapter.py`](./examples/provider_route_adapter.py) | Provider-route boundary, data classification, source-basis and prompt-lineage conditions, dry-run observability |
+| [`EVALUATION_SYSTEM.md`](./EVALUATION_SYSTEM.md) | Tasks, deterministic scores, refusal conditions, evaluation schema, run artifacts, and test path |
 
 The code does not simulate a magical model. It demonstrates the operational state that must surround one.
 
@@ -98,6 +102,7 @@ maintain prompt and provider-route lineage
 build lightweight Python and browser-based interfaces
 separate generation from reviewed standing
 create deterministic hold, escalation, drift, and revalidation paths
+create task catalogs, schemas, graders, replayable run artifacts, and test surfaces
 model safe provider-adapter boundaries
 reason about LoRA and model adaptation as evidence-bearing change
 translate architecture across creative, support, technical, and organizational contexts
@@ -136,7 +141,7 @@ Standing is the system question.
 >
 > It contains **no API keys, customer data, live provider calls, private runtime materials, protected research, or claim of a hosted production service.**
 
-See [`SAFE_EVALUATION_BOUNDARY.md`](./SAFE_EVALUATION_BOUNDARY.md) for the explicit boundary.
+See [`SAFE_EVALUATION_BOUNDARY.md`](./SAFE_EVALUATION_BOUNDARY.md) for the explicit boundary and named refusal conditions.
 
 ---
 
