@@ -1,24 +1,13 @@
 # Creative Ops Operational Intelligence
 
-## AI Specialist Evaluation Build — Samantha Revita
+## Samantha Revita — AI Specialist Evaluation Build
 
-This is a public evaluation surface for an operational intelligence architecture.
-
-It is not a generic prompt collection, retrieval wrapper, dashboard, or policy checklist.
-
-The work centers on a governing question:
-
-```text
-When may an AI-assisted movement become operationally real?
-```
-
-That requires visible conditions:
+This public build demonstrates an operational intelligence architecture for AI-assisted work.
 
 ```text
 active material basis
-→ prompt lineage
-→ provider route
-→ operational resolution
+→ lineage
+→ resolution
 → witness
 → reviewed standing
 → material drift
@@ -26,65 +15,47 @@ active material basis
 → replay
 ```
 
-## Begin with the operational surface
-
-Open:
+The central question is:
 
 ```text
-operational-surface.html
+When may an AI-assisted movement become operationally real?
 ```
 
-For a local preview:
+## Start here
+
+| Evidence | Location |
+|---|---|
+| Public entry | `index.html` |
+| Interactive consequence surface | `operational-surface.html` |
+| Architecture position | `OPERATIONAL_INTELLIGENCE.md` |
+| Application casebook | `CASEBOOK.md` |
+| Evidence map | `EVIDENCE_MAP.md` |
+
+## Executable proof
+
+The public examples use the Python standard library only.
 
 ```bash
-python3 -m http.server 8080
+python3 examples/negative_cases.py
+python3 examples/operational_lifecycle.py
+python3 examples/provider_route_adapter.py
 ```
 
-Then open:
+They demonstrate hold conditions, active basis resolution, witnessed standing, material-drift revalidation, and a safe provider-adapter boundary.
 
-```text
-http://localhost:8080/operational-surface.html
-```
+## Architecture
 
-The surface is browser-only and demonstrates the consequence lifecycle without external model calls, customer data, credentials, or private runtime material.
-
-## What this shows
-
-| Dimension | Visible question |
-|---|---|
-| Material standing | What sources, constraints, and authorities are active? |
-| Lineage | Which prompt and provider route participated? |
-| Resolution | Is the active basis sufficient for the movement proposed? |
-| Witness | What records the conditions under which it was resolved? |
-| Reviewed standing | Is the result merely generated, or permitted to stand? |
-| Revalidation | What change makes the prior standing no longer current? |
-| Replay | How can the path be reconstructed later? |
-
-## AI Specialist capability represented
-
-- AI workflow prototyping across creative, technical, and operational work;
-- RAG-ready material architecture with provenance, authority, version, and use scope;
-- prompt lineage and provider-route visibility;
-- lightweight Python and browser-based operational interfaces;
-- tool and provider evaluation for task fit, cost, data boundaries, reliability, and observability;
-- responsible release design, human review, refusal, escalation, and revalidation;
-- LoRA and adaptation evaluation where model adaptation is justified;
-- stakeholder enablement through clear operating models rather than abstract tool training.
-
-RAG, prompts, providers, automation, and model adaptation are supporting mechanisms. The architecture is about whether a movement has sufficient standing to bind consequence.
-
-## Public materials
-
-- `OPERATIONAL_INTELLIGENCE.md` — architecture and positioning
-- `operational-surface.html` — primary interactive public surface
-- `architecture/` — implementation disciplines supporting the model
-- `samples/` — safe source basis, prompt, tool-evaluation, and Python examples
-- `SAFE_EVALUATION_BOUNDARY.md` — public scope and protection boundary
+- `architecture/consequence-runtime-model.md`
+- `architecture/reference-implementation-blueprint.md`
+- `architecture/rag-document-standards.md`
+- `architecture/prompt-lineage-and-versioning.md`
+- `architecture/provider-evaluation-framework.md`
+- `architecture/responsible-ai-release-controls.md`
+- `architecture/lora-adaptation-approach.md`
 
 ## Public boundary
 
-This repository is a safe demonstration, not a hosted production service. It contains no secrets, customer data, external provider calls, private implementation artifacts, or claim of an active third-party integration.
+This is a public demonstration, not a hosted production service. It contains no secrets, customer data, live provider calls, or protected private implementation material.
 
 **Samantha Revita**  
-Creative Ops Operational Intelligence  
-GitHub: https://github.com/Kamanaka5502
+Creative Ops Operational Intelligence
