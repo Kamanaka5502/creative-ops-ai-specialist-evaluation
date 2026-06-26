@@ -27,6 +27,22 @@ ACTIVE MATERIAL FIELD ─── LINEAGE ─── PROVIDER ROUTE
                   DRIFT → REVALIDATE → REPLAY
 ```
 
+```mermaid
+flowchart LR
+    M[Proposed movement] --> R[Operational resolution]
+    B[Active material basis] --> R
+    L[Prompt lineage] --> R
+    P[Provider route] --> R
+    R -->|insufficient field| H[HOLD / ESCALATE]
+    R -->|sufficient field| W[Witness + conditions]
+    W --> V{Named review}
+    V -->|bind| S[Reviewed standing]
+    V -->|not yet| N[NOT_BOUND]
+    S --> D[Material or lineage drift]
+    D --> Q[REVALIDATION_REQUIRED]
+    Q --> T[Replay and re-resolve]
+```
+
 ---
 
 ## The governing question
@@ -68,16 +84,41 @@ It is a public evaluation build for an **operational intelligence architecture**
 
 ---
 
-## Executable proof
+## Evaluation kernel
 
-The public examples run with the Python standard library only.
+```text
+TASK DEFINITION
+→ EVALUATION RECORD
+→ DETERMINISTIC GRADER
+→ STRUCTURED SCORES + REFUSAL REASONS
+→ REPLAYABLE RUN ARTIFACT
+```
+
+See [`EVALUATION_SYSTEM.md`](./EVALUATION_SYSTEM.md) for the task catalog, record contracts, grader, sample runs, and tests.
+
+---
+
+## How to run
+
+No package installation is required. The public evaluator uses the Python standard library.
+
+```bash
+python3 evaluate.py \
+  --task tasks/creative.json \
+  --record samples/runs/run_001_human.json \
+  --output /tmp/creative-evaluation.json
+
+python3 -m unittest discover -s tests -p "test_*.py"
+```
+
+---
+
+## Executable proof
 
 ```bash
 python3 examples/negative_cases.py
 python3 examples/operational_lifecycle.py
 python3 examples/provider_route_adapter.py
-python3 evaluate.py --task tasks/creative.json --record samples/runs/run_001_human.json
-python3 -m unittest tests/test_basic_grader.py
 ```
 
 | Example | Demonstrates |
