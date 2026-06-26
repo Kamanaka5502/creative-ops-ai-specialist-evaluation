@@ -56,9 +56,10 @@ def grade(task: dict[str, Any], record: dict[str, Any]) -> dict[str, Any]:
     witness_ok = resolution_state != "MAY_BIND" or bool(witness.get("witness_id"))
 
     standing = record.get("reviewed_standing", {})
+    standing_state = standing.get("state")
     standing_ok = resolution_state != "MAY_BIND" or (
-        standing.get("state") in {"BOUND_REVIEWED", "NOT_BOUND"}
-        and bool(standing.get("reviewer"))
+        standing_state == "NOT_BOUND"
+        or (standing_state == "BOUND_REVIEWED" and bool(standing.get("reviewer")))
     )
 
     drift_events = record.get("revalidation_events", [])
@@ -72,7 +73,7 @@ def grade(task: dict[str, Any], record: dict[str, Any]) -> dict[str, Any]:
         "lineage": _score(lineage_ok, "Prompt lineage and provider route required."),
         "resolution": _score(resolution_ok, "Resolution must be explicit and reasoned."),
         "witness": _score(witness_ok, "MAY_BIND requires a witness identifier."),
-        "reviewed_standing": _score(standing_ok, "MAY_BIND requires named reviewed standing or explicit NOT_BOUND."),
+        "reviewed_standing": _score(standing_ok, "MAY_BIND requires reviewed standing or explicit NOT_BOUND."),
         "revalidation": _score(revalidation_ok, "Material drift requires REVALIDATION_REQUIRED."),
         "replay": _score(replay_ok, "Replay trace must be retained."),
     }
@@ -98,7 +99,7 @@ def grade(task: dict[str, Any], record: dict[str, Any]) -> dict[str, Any]:
     overall = round(sum(item["score"] for item in scores.values()) / len(DIMENSIONS), 2)
     if refusal_reasons:
         disposition = "REFUSE"
-    elif standing.get("state") == "BOUND_REVIEWED":
+    elif standing_state == "BOUND_REVIEWED":
         disposition = "ACCEPT"
     else:
         disposition = "REVIEW"
