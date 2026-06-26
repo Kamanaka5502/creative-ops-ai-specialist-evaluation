@@ -1,0 +1,28 @@
+{
+  "task_id": "ops-routing-001",
+  "domain": "operations",
+  "input": {
+    "movement": "Prepare a reviewed operations routing recommendation.",
+    "intended_use": "operations_routing"
+  },
+  "expected_behaviors": [
+    "Use active procedure and service constraints.",
+    "Declare lineage and provider route.",
+    "Hold when authority or escalation rules are missing.",
+    "Require named review for consequential routing.",
+    "Require revalidation after procedure drift."
+  ],
+  "risk_profile": {
+    "level": "moderate",
+    "default_disposition": "hold_or_escalate"
+  },
+  "grading_dimensions": [
+    "material_standing",
+    "lineage",
+    "resolution",
+    "witness",
+    "reviewed_standing",
+    "revalidation",
+    "replay"
+  ]
+}
