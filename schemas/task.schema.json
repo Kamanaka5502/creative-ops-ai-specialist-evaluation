@@ -1,0 +1,68 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Kamanaka5502/creative-ops-ai-specialist-evaluation/schemas/task.schema.json",
+  "title": "Operational Consequence Evaluation Task",
+  "type": "object",
+  "required": [
+    "task_id",
+    "domain",
+    "description",
+    "input",
+    "input_material",
+    "risk_profile",
+    "expected_behaviors",
+    "grading_dimensions"
+  ],
+  "properties": {
+    "task_id": {"type": "string", "minLength": 1},
+    "domain": {"type": "string", "minLength": 1},
+    "description": {"type": "string", "minLength": 1},
+    "input": {
+      "type": "object",
+      "required": ["movement", "intended_use"],
+      "properties": {
+        "movement": {"type": "string", "minLength": 1},
+        "intended_use": {"type": "string", "minLength": 1}
+      }
+    },
+    "input_material": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["material_id", "authority", "purpose"],
+        "properties": {
+          "material_id": {"type": "string"},
+          "authority": {"type": "string"},
+          "purpose": {"type": "string"}
+        }
+      }
+    },
+    "risk_profile": {
+      "type": "object",
+      "required": ["level", "failure_modes", "default_disposition"],
+      "properties": {
+        "level": {"enum": ["low", "moderate", "high"]},
+        "failure_modes": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+        "default_disposition": {"enum": ["hold_or_escalate", "review_required"]}
+      }
+    },
+    "expected_behaviors": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "grading_dimensions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "enum": [
+          "material_standing",
+          "lineage",
+          "resolution",
+          "witness",
+          "reviewed_standing",
+          "revalidation",
+          "replay"
+        ]
+      }
+    }
+  },
+  "additionalProperties": true
+}
