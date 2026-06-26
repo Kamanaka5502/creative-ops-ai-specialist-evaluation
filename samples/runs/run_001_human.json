@@ -22,6 +22,15 @@
   "evaluation": {
     "disposition": "ACCEPT",
     "overall_score": 100.0,
+    "scores": {
+      "material_standing": 100,
+      "lineage": 100,
+      "resolution": 100,
+      "witness": 100,
+      "reviewed_standing": 100,
+      "revalidation": 100,
+      "replay": 100
+    },
     "note": "Illustrative deterministic artifact generated from the public basic grader."
   }
 }
