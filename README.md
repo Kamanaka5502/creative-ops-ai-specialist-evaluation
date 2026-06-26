@@ -4,7 +4,7 @@
 </p>
 
 <p align="center">
-  <img src="./assets/creative-ops-operational-intelligence-holographic.png" alt="Holographic Creative Ops Operational Intelligence consequence evaluation surface" width="100%" />
+  <img src="./creative-ops-operational-intelligence-holographic.png" alt="Holographic Creative Ops Operational Intelligence consequence evaluation surface" width="100%" />
 </p>
 
 # Resolve what may become real.
