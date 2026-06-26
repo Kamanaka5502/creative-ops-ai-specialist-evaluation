@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/Kamanaka5502/creative-ops-ai-specialist-evaluation/schemas/evaluation_record.json",
+  "title": "Consequence Evaluation Record",
+  "type": "object",
+  "required": [
+    "task_id",
+    "trial_id",
+    "agent_id",
+    "material_basis",
+    "prompt_lineage",
+    "provider_route",
+    "resolution",
+    "witness",
+    "reviewed_standing",
+    "revalidation_events",
+    "replay_trace"
+  ],
+  "properties": {
+    "task_id": {"type": "string"},
+    "trial_id": {"type": "string"},
+    "agent_id": {"type": "string"},
+    "material_basis": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["material_id", "version", "status", "authority", "allowed_uses"],
+        "properties": {
+          "material_id": {"type": "string"},
+          "version": {"type": "string"},
+          "status": {"type": "string"},
+          "authority": {"type": "string"},
+          "allowed_uses": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "prompt_lineage": {"type": "string"},
+    "provider_route": {"type": "string"},
+    "resolution": {
+      "type": "object",
+      "required": ["state", "reason"],
+      "properties": {
+        "state": {"enum": ["HELD", "MAY_BIND", "REVALIDATION_REQUIRED"]},
+        "reason": {"type": "string"}
+      }
+    },
+    "witness": {
+      "type": "object",
+      "properties": {
+        "witness_id": {"type": "string"},
+        "created_at": {"type": "string"}
+      }
+    },
+    "reviewed_standing": {
+      "type": "object",
+      "required": ["state"],
+      "properties": {
+        "state": {"enum": ["BOUND_REVIEWED", "NOT_BOUND", "HELD"]},
+        "reviewer": {"type": "string"}
+      }
+    },
+    "revalidation_events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["event_type"],
+        "properties": {
+          "event_type": {"type": "string"},
+          "material_id": {"type": "string"},
+          "detail": {"type": "string"}
+        }
+      }
+    },
+    "replay_trace": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["event_type"],
+        "properties": {
+          "event_type": {"type": "string"},
+          "timestamp": {"type": "string"},
+          "detail": {"type": "string"}
+        }
+      }
+    },
+    "output": {"type": "string"}
+  },
+  "additionalProperties": true
+}
